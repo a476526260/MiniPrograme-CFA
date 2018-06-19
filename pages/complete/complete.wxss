@@ -1,0 +1,84 @@
+/* pages/complete/complete.wxss */
+page{
+  height: 100%;
+  overflow: hidden;
+}
+.container{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://pic.gaodun.com/cfa_xcx/images/home-bj.jpg");
+  background-size: 100% 100%;
+}
+.completeImage{
+  width: 247rpx;
+  margin: 221rpx auto 0;
+}
+.completeImage image{
+  display: block;
+  width: 100%;
+}
+.tip{
+  width: 494rpx;
+  margin: 66rpx auto 0;
+}
+.tip image{
+  width: 100%;
+}
+.report{
+  position: absolute;
+  bottom: 12rpx;
+  left: 0;
+  width: 100%;
+  
+}
+.report .reportButton{
+  width: 390rpx;
+  margin-left: 24%;
+  position: absolute;
+  top: -100rpx;
+  z-index: 1
+}
+.report .reportButton button{
+  width: 100%;
+  height: 148rpx;
+  border: none;
+  padding: 0;
+}
+.report .reportButton button image{
+  width: 100%;
+}
+.report .people{
+  position: relative;
+  z-index: 2;
+  width: 361rpx;
+  margin: 0 auto;
+}
+.report .people image{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

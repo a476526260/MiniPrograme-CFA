@@ -1,0 +1,25 @@
+<!--pages/ranking/ranking.wxml-->
+<view class='container'>
+  <view class='rankingTitle'><image src='https://pic.gaodun.com/cfa_xcx/images/rankingTitle.png' mode='widthFix'></image></view>
+  <view class='rankingList'>
+    <block wx:for='{{result}}' wx:key='{{index}}' wx:if='{{index>=minCount&&index<maxCount}}'>
+      <view class='rankingItem  {{index==0?"yellow":""}}'>
+        <view class='rankingIndex'>
+          <image class='topRanking' wx:if='{{index<3}}' src='https://pic.gaodun.com/cfa_xcx/images/ranking-{{index+1}}.png' mode='widthFix'></image>
+          <view wx:else class='other'>{{index+1}}</view>
+        </view>
+        <view class='avatar'>
+          <image src='{{item.avatar}}' mode='widthFix'></image>
+        </view>
+        <view class='infor'>
+          <view class='nickName'>{{item.nickName}}</view>
+          <view class='testDetail'>{{item.testDetail}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='nextPage' wx:if='{{isShow}}' bindtap='showNextPage'>
+  <image src='https://pic.gaodun.com/cfa_xcx/images/nextPage.png' mode='widthFix'></image>
+</view>

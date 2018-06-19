@@ -1,0 +1,17 @@
+<!--pages/complete/complete.wxml-->
+<view class='container'>
+  <view class='completeImage'>
+    <image src='https://pic.gaodun.com/cfa_xcx/images/complete.png' mode='widthFix'></image>
+  </view>
+  <view class='tip'>
+    <image src='https://pic.gaodun.com/cfa_xcx/images/tip.png' mode='widthFix'></image>
+  </view>
+  <view class='report'>
+    <view class='reportButton'>
+      <button plain open-type='share'><image src='https://pic.gaodun.com/cfa_xcx/images/report.png' mode='widthFix'></image></button>
+    </view>
+    <view class='people'>
+      <image src='https://pic.gaodun.com/cfa_xcx/images/people.png' mode='widthFix'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,132 @@
+<!--pages/result/result.wxml-->
+<swiper vertical="false" class='pageContainer' current='{{currentSwiper}}' bindchange="swiperChange">
+  <swiper-item>
+    <view class='container'>
+      <view class='resultWrapper'>
+        <view class='basicInfo'>
+          <view class='avatar'>
+            <view type="userAvatarUrl" lang="zh_CN" class="userAvatarUrl">
+              <image src='{{avatarUrl}}' mode='widthFix'></image>
+            </view>
+          </view>
+          <view class='nickName'>
+            <view type="userNickName" lang="zh_CN" class='userNickName'>{{nickName}}</view>
+          </view>
+        </view>
+        <view class='resultBox'>
+          <view class='resultLine'>
+            <image src='https://pic.gaodun.com/cfa_xcx/images/1.png' mode='widthFix' class='resultTitle'></image>
+            <image src='{{yourProfession}}' mode='widthFix' class='resultDetail'></image>
+          </view>
+          <view class='resultLine'>
+            <image src='https://pic.gaodun.com/cfa_xcx/images/2.png' mode='widthFix' class='resultTitle'></image>
+            <image src='{{yourWork}}' mode='widthFix' class='resultDetail'></image>
+          </view>
+        </view>
+        <view class='potential'>
+          <image src='{{yourPotenial}}' mode='widthFix'></image>
+        </view>
+        <view class='button'>
+          <button plain class='saveResult' bindtap='saveImage'><image src='https://pic.gaodun.com/cfa_xcx/images/saveImage.png' mode='widthFix'></image></button>
+        </view>    
+      </view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class='container2'>
+      <view class='resultWrapper'>
+        <view class='basicInfo'>
+          <view class='avatar'>
+            <view type="userAvatarUrl" lang="zh_CN" class="userAvatarUrl">
+              <image src='{{avatarUrl}}' mode='widthFix'></image>
+            </view>
+            <!--<open-data type="userAvatarUrl" lang="zh_CN"></open-data>-->
+          </view>
+          <view class='nickName'>
+            <!--<open-data type="userNickName" lang="zh_CN"></open-data>-->
+            <view type="userNickName" lang="zh_CN" class='userNickName'>{{nickName}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='fetureTxt'>
+        <image src='https://pic.gaodun.com/cfa_xcx/images/fetureTxt.png' mode='widthFix'></image>
+      </view>
+      <view class='fetureButton'>
+        <view class='fetureButtonItem' wx:for='{{fetureButtons}}' wx:key='{{index}}'>
+          <button plain class='buttonItem' open-type='share' data-index='{{index}}'><image src='https://pic.gaodun.com/cfa_xcx/images/{{item}}' mode='widthFix'></image></button>
+        </view>
+      </view>
+      <!--<view class='friendsPriceButton'>
+        <button plain class='rankingButton' bindtap='turnToRanking'><image src='https://pic.gaodun.com/cfa_xcx/images/friendsPrice.png' mode='widthFix'></image></button>
+      </view>-->
+    </view>
+  </swiper-item>
+</swiper>
+
+
+<view class='nextPage' wx:if='{{nextButtonShow}}' bindtap='showNextPage'>
+  <image src='https://pic.gaodun.com/cfa_xcx/images/nextPage.png' mode='widthFix'></image>
+</view>
+
+<view class='mask' wx:if="{{showMask}}" bindtap='toggleMask'></view> 
+<view class='shareTipImg' wx:if='{{showTipImage}}'>
+  <image src='https://pic.gaodun.com/cfa_xcx/images/share-tip.png' mode='widthFix'></image>
+</view>
+
+<view class='fetureDetailBox' wx:if="{{showfetureDetail}}">
+    <view class='close' bindtap='closeFeture'><image src='https://pic.gaodun.com/cfa_xcx/images/close.png' mode='widthFix'></image></view>
+    <view class='title'><image src='{{titleSrc}}' mode='widthFix'></image></view>
+    <!--车子-->
+    <view class='carBox' wx:if="{{clickedIndex==0}}">
+      <view class='carImage' wx:if='{{carImage}}'><image src='{{carImage}}' mode='widthFix'></image></view>
+      <view class='carTxt'>
+        <text class='carName'>{{carName}}</text>
+        <text class='carDetail'>{{carDetail}}</text>
+      </view>
+    </view>
+    <!--伴侣-->
+    <view class='partnerBox' wx:if="{{clickedIndex==1}}">
+      <view class='partnerTxt'>
+         <text>{{partnerTxt}}</text>
+      </view>
+      <view class='starBox'>
+        <view class='star' wx:if='{{male}}'>
+          <text>{{male}}</text>
+          <image src='{{maleSrc}}' mode='widthFix'></image>
+        </view>
+        <view class='star' wx:if='{{female}}'>
+          <text>{{female}}</text>
+          <image src='{{femaleSrc}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+    <!--房子-->
+    <view class='houseBox' wx:if="{{clickedIndex==2}}">
+      <view class='houseTxt'>
+        <view class='houseName'><text>{{houseName}}</text></view>
+        <view class='houseImages'>
+          <view class='houseItem'wx:for="{{houseImages}}" wx:key='{{index}}'><image wx:if='{{item}}' src='{{item}}' mode='widthFix'></image></view>
+        </view>
+      </view>
+    </view>
+    <!--城市-->
+    <view class='cityBox' wx:if="{{clickedIndex==3}}">
+      <view class='cityName'>
+        <text>{{cityName}}</text>
+      </view>
+      <view class='cityImage'>
+        <image wx:if="{{cityImage}}" src='{{cityImage}}' mode='widthFix'></image>
+      </view>
+      <view class='cityDescrible'>{{cityDescrible}}</view>
+    </view>
+</view>
+<canvas canvas-id='saveImage' class='saveImage' style=''></canvas>
+<!--获取用户信息框-->
+<view class='userInforView' wx:if="{{showGetInfor && canIUse}}">
+  <view class='userInforTitle'>获取用户信息权限</view>
+  <view class='userInforSubtitle'>获得你的公开信息（昵称、头像等）</view>
+  <view class='buttonBox'>
+    <button plain class='getUserInfo' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 允许</button>
+    <button plain class='cancel' bindtap='cancel'>拒绝</button>
+  </view>
+</view>

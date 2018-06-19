@@ -1,0 +1,479 @@
+/* pages/result/result.wxss */
+page{
+  height: 100%;
+  overflow: hidden;
+}
+.pageContainer{
+  height: 100%;
+  overflow: hidden;
+}
+
+.container{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 9;
+  background-image: url("https://pic.gaodun.com/cfa_xcx/images/subject-bj.jpg");
+  background-size: 100% 100%;
+  transition: all 0.3s linear;
+}
+.container2{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 8;
+  background-image: url("https://pic.gaodun.com/cfa_xcx/images/home-bj.jpg");
+  background-size: 100% 100%;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+.basicInfo{
+  position: relative;
+  width: 664rpx;
+  margin: 105rpx auto 0;
+}
+.basicInfo::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.basicInfo .avatar{
+  position: relative;
+  float: left;
+  width: 210rpx;
+  height: 210rpx;
+  margin-left: 8%;
+  
+}
+.basicInfo .avatar::before{
+  content: '';
+  display: block;
+  width: 86rpx;
+  height: 86rpx;
+  position: absolute;
+  right: -20rpx;
+  top: -30rpx;
+  z-index: 9;
+  background: url("https://pic.gaodun.com/cfa_xcx/images/adhesive1.png");
+  background-size: 100% 100%;
+}
+.basicInfo .avatar::after{
+  content: '';
+  display: block;
+  width: 65rpx;
+  height: 66rpx;
+  position: absolute;
+  left: -10rpx;
+  bottom: -40rpx;
+  z-index: 9;
+  background: url("https://pic.gaodun.com/cfa_xcx/images/adhesive2.png");
+  background-size: 100% 100%;
+}
+.basicInfo .avatar .userAvatarUrl{
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-8deg)
+}
+.basicInfo .avatar .userAvatarUrl image{
+  width: 100%;
+}
+.basicInfo .nickName{
+  position: relative;
+  float: left;
+  width: 328rpx;
+  height: 241rpx;
+  margin-top: -20rpx;
+  margin-left: 8%;
+  background: url("https://pic.gaodun.com/cfa_xcx/images/bubble.png");
+  background-size: 100% 100%;
+}
+.basicInfo .nickName .userNickName{
+  position: absolute;
+  display: block;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: "PingFang SC";
+  font-style: italic;
+  font-size: 36rpx;
+  color: #ff8a00;
+  font-weight: bold;
+}
+.basicInfo .nickName canvas{
+ width: 100%;
+ height: 100%;
+}
+.potential{
+  margin-top: -50rpx;
+  text-align: center;
+}
+.potential image{
+  width:613rpx;
+  margin-top: 10rpx;
+}
+.button{
+  width: 257rpx;
+  margin: -10rpx auto;
+}
+.button button{
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+.button button image{
+  width: 100%;
+}
+
+.mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.7)
+}
+.shareTipImg{
+  position: fixed;
+  width: 544rpx;
+  top:30rpx;
+  left: 10%;
+  z-index: 10001;
+}
+.shareTipImg image{
+  width: 100%;
+}
+.resultBox{
+  position:relative;
+  width:664rpx;
+  margin: 0 auto;  
+}
+.resultLine{
+  position: relative;
+  margin:20rpx auto 0;
+}
+.resultTitle{
+  position:relative;
+  width: 632rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.resultDetail{
+  position: absolute;
+  width: 340rpx;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-70%);
+  margin-left: -50rpx;
+}
+
+.nextPage{
+  position: fixed;
+  width: 45rpx;
+  height: 45rpx;
+  padding: 20rpx;
+  bottom: 20rpx;
+  left: 50%;
+  z-index: 998;
+  transform: translateX(-50%);
+  animation: downTip linear 0.5s infinite;
+}
+.nextPage image{
+  width: 100%;
+}
+
+.fetureTxt{
+  margin-top: 60rpx;
+  text-align: center;
+}
+.fetureTxt image{
+  width: 579rpx;
+}
+.fetureButton{
+  width: 664rpx;
+  margin: 44rpx auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.fetureButton .buttonItem{
+  padding: 0;
+  border: none;
+  display: block;
+  height: auto;
+}
+
+.fetureButton .fetureButtonItem{
+  width: 271rpx;
+  margin-bottom: 0;
+}
+.fetureButton .fetureButtonItem image{
+  width: 100%;
+}
+
+.friendsPriceButton{
+  width: 257rpx;
+  margin: 0 auto;
+}
+.friendsPriceButton button{
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+.friendsPriceButton button image{
+  width: 100%;
+}
+.fetureDetailBox{
+  position: fixed;
+  width: 570rpx;
+  padding-bottom: 100rpx;
+  left: 50%;
+  top: 50%;
+  z-index: 1001;
+  transform: translate(-50%,-50%);
+  background: url('https://pic.gaodun.com/cfa_xcx/images/module.png');
+  background-size: 100% 100%;
+}
+.fetureDetailBox .close{
+  position: absolute;
+  width: 36rpx;
+  top: 0;
+  right: 0;
+  padding: 22rpx;
+}
+.fetureDetailBox .close image{
+  width: 100%;
+}
+.fetureDetailBox .title{
+  margin-top: 53rpx;
+  text-align: center
+}
+.fetureDetailBox .title image{
+  width: 340rpx;
+}
+.fetureDetailBox .carImage{
+  width: 340rpx;
+  margin: 35rpx auto 50rpx;
+}
+.fetureDetailBox .carImage image{
+  width: 100%;
+}
+
+.fetureDetailBox .carTxt{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  color: #333333;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  text-align: justify;
+}
+.fetureDetailBox .carTxt .carName{
+  font-size: 36rpx;
+  padding-right: 5px;
+  font-weight: bold;
+}
+.fetureDetailBox .partnerTxt{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  color: #333333;
+  padding: 0 5%;
+  box-sizing: border-box;
+  text-align: justify;
+}
+.fetureDetailBox .starBox{
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.fetureDetailBox .star{
+  width: 60%;
+  padding: 0 5%;
+}
+.fetureDetailBox .star image{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.fetureDetailBox .star text {
+  display: block;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  text-align: center;
+  white-space: nowrap;
+  color: #ff8a00;
+}
+.fetureDetailBox .houseName{
+  margin-top: 20rpx;
+  text-align: center;
+}
+.fetureDetailBox .houseName text{
+  font-size: 30rpx;
+}
+.fetureDetailBox .houseImages{
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.fetureDetailBox .houseImages .houseItem{
+  display: block;
+  width: 80%;
+  max-width: 80%;
+  min-width: 40%;
+  padding: 0 5%;
+}
+.fetureDetailBox .houseImages image{
+  width: 100%;
+}
+.fetureDetailBox .cityName{
+  margin-top: 20rpx;
+  text-align: center;
+}
+.fetureDetailBox .cityName text{
+  font-size: 32rpx;
+  color: #ff8a00;
+  font-weight: bold;
+}
+.fetureDetailBox .cityImage{
+  display: block;
+  width: 80%;
+  margin: 20rpx auto 0;
+}
+.fetureDetailBox .cityImage image{
+  width: 100%;
+}
+.fetureDetailBox .cityDescrible{
+  margin-top: 10rpx;
+  padding: 0 10%;
+  text-align: justify;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #333333;
+}
+
+.saveImage{ 
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -100%;
+  transform: translateY(-1000%);
+}
+.userInforView{
+  position: fixed;
+  box-sizing: border-box;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  border-radius: 5px;
+  background: #fff;
+  overflow: hidden;
+}
+.userInforTitle{
+  padding: 10rpx 0; 
+  font-size: 36rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  color: #333333
+}
+.userInforSubtitle{
+  padding: 10rpx 0;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #333333;
+  text-align: center;
+}
+.buttonBox{
+  position: relative;
+  margin-top: 40rpx;
+  display: flex;
+}
+.buttonBox::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+}
+.buttonBox::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: #ddd;
+}
+.buttonBox button{
+  flex: 1;
+  border-radius: 0;
+  background: #fff;
+  border: none;
+}
+.buttonBox button:first-child{
+  color: rgb(37,196,0);
+}
+
+@keyframes downTip{
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50%{
+    transform: translateX(-50%) translateY(5px);
+  }
+  100%{
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

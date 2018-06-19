@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='home-title'>
+     <image src='https://pic.gaodun.com/cfa_xcx/images/home-title.png'></image>
+  </view>
+  <view class='home-people'>
+    <image src='https://pic.gaodun.com/cfa_xcx/images/home-people.png'></image>
+  </view>
+  <view class='btn-group'>
+    <view class='button button-start' hover-class='opacity' hover-stay-time='100' bindtap='start'></view>
+    <view class='button button-history' hover-class='opacity' hover-stay-time='100' bindtap='turnToResult' wx:if='{{showHistory}}'></view>
+  </view>
+</view>
+

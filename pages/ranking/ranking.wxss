@@ -1,0 +1,132 @@
+/* pages/ranking/ranking.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("https://pic.gaodun.com/cfa_xcx/images/subject-bj.jpg");
+  background-size: 100% 100%;
+}
+
+.rankingTitle{
+  text-align: center;
+}
+.rankingTitle image{
+  width: 409rpx;
+  margin-top: 80rpx;
+}
+
+.rankingList{
+  margin-top: 50rpx;
+  overflow: hidden;
+}
+.rankingItem{
+  display: flex;
+  align-items: center;
+  width: 630rpx;
+  margin:0 auto;
+  padding: 18rpx 0;
+  background: url('https://pic.gaodun.com/cfa_xcx/images/dotted-line.png') bottom center no-repeat;
+  background-size: 100% 9rpx;
+}
+.rankingIndex{
+  width: 70rpx
+}
+.rankingItem .topRanking{
+  width: 100%;
+  display: block;
+}
+.rankingItem .rankingIndex .other{
+  width: 69rpx;
+  height: 62rpx;
+  background: url('https://pic.gaodun.com/cfa_xcx/images/ranking-other.png') center no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  text-indent: -0.2em;
+  line-height: 62rpx;
+  color: #717171;
+  font-family: "Pingfang";
+  font-style: italic;
+}
+.rankingItem .avatar{
+  width: 100rpx;
+  margin: 0 20rpx;
+  position: relative;
+}
+.rankingItem .avatar::before{
+  content: "";
+  display: block;
+  width: 37rpx;
+  height: 44rpx;
+  position: absolute;
+  top: -28rpx;
+  left: 50%;
+  margin-left: -18rpx;
+  background: url('https://pic.gaodun.com/cfa_xcx/images/adhesive3.png') center no-repeat;
+  background-size: 100% 100%;
+}
+.rankingItem.yellow .avatar::before{
+  display: none;
+}
+.rankingItem .avatar image{
+  width: 100%;
+  display: block;
+}
+
+.rankingItem .infor{
+  flex: 1;
+}
+
+.rankingItem .nickName{
+  font-size: 28rpx;
+  line-height: 36rpx;
+  font-style: italic;
+  color: #333333;
+}
+.rankingItem .testDetail{
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #666666;
+}
+.rankingItem.yellow .nickName{
+  color: #f48400;
+}
+.rankingItem.yellow .testDetail{
+  color: #f68500;
+}
+
+.nextPage{
+  position: fixed;
+  width: 45rpx;
+  height: 45rpx;
+  padding: 20rpx;
+  bottom: 30rpx;
+  left: 50%;
+  z-index: 998;
+  transform: translateX(-50%);
+  animation: downTip linear 0.5s infinite;
+}
+.nextPage image{
+  width: 100%;
+}
+
+@keyframes downTip{
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50%{
+    transform: translateX(-50%) translateY(5px);
+  }
+  100%{
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+
+
+

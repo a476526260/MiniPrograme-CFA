@@ -1,0 +1,27 @@
+<!--pages/subject/subject.wxml-->
+<view class='container'>
+  <view class='subject'>
+    <block wx:for="{{subject}}" wx:key="{{index}}" wx:if="{{(current-1)==index}}">
+    <view>
+      <view class='subjectText'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='answerBox'>
+        <view class='answer' bindtap='choose' data-index="{{index}}" data-ans="A">
+          <view class='answerPicture'><image src='{{item.answerA.src}}' mode='widthFix'></image></view>
+          <view class='answerText'><text class='{{item.answerA.text.length>18?"size2":"size1"}}'>{{item.answerA.text}}</text></view>
+          <view class='check' wx:if="{{choosed[index].A=='0'?false:true}}"></view>
+        </view>
+        <view class='answer' bindtap='choose' data-index="{{index}}" data-ans="B">
+          <view class='answerPicture'><image src='{{item.answerB.src}}' mode='widthFix'></image></view>
+          <view class='answerText'><text class='{{item.answerB.text.length>18?"size2":"size1"}}'>{{item.answerB.text}}</text></view>
+          <view class='check' wx:if="{{choosed[index].B=='0'?false:true}}"></view>
+        </view>        
+      </view>
+      <view class='pageIndex'>
+        <text>{{current}}/10</text>
+      </view>
+    </view>
+    </block>
+  </view>
+</view>
